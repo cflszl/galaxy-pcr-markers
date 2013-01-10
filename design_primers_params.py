@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 ##design primers to features in multiple sequences
-##usage: python  design_primers.py <fasta-file> <gff file> <file of target IDs> <prod_min_size> <prod_max_size>
+##usage: python  design_primers.py <fasta-file> <gff file> <file of target IDs> <prod_min_size> <prod_max_size> <optimum length> <maximum tm difference> <optimum tm> <optimum gc percentage> <maximum polyx> <gc clamp>
 
 ##CAUTION will only reliably work with  Primer3 version 1.1.4 or earlier ##
 
@@ -98,12 +98,12 @@ gff_file = sys.argv[2]
 target_file =  sys.argv[3]
 prod_min_size = int(sys.argv[4])
 prod_max_size = int(sys.argv[5])
-optimum_length = int(sys.argv[6])									## Recommended: 20
-max_tm_diff = int(sys.argv[7])                                      ## Recommended: 1
-optimum_tm = int(sys.argv[8]) 										## Recommended: 59-61
-opt_GC_percent = int(sys.argv[9])                                   ## Recommended: 50
-maxpolyx = int(sys.argv[10])                                        ## Recommended: less than 4
-gc_clamp = int(sys.argv[11]) 										## Recommended: 2 G/Cs at the very end
+optimum_length = int(sys.argv[6])	## Recommended: 20
+max_tm_diff = int(sys.argv[7])		## Recommended: 1
+optimum_tm = int(sys.argv[8])		## Recommended: 59-61
+opt_GC_percent = int(sys.argv[9])	## Recommended: 50
+maxpolyx = int(sys.argv[10])		## Recommended: less than 4
+gc_clamp = int(sys.argv[11])		## Recommended: 2 G/Cs at the very end
 
 ## target is specified in start, end format 
 productsizerange = str(prod_min_size) + "," + str(prod_max_size)
